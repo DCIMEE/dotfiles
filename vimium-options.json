@@ -1,0 +1,6 @@
+{
+  "keyMappings": "# Insert your preferred key mappings here.\n\nmapkey n h\nmapkey N H\nmapkey e j\nmapkey E d\nmapkey i l\nmapkey u k\nmapkey U u\n\nmap <a-u> scrollFullPageUP\nmap <a-e> scrollFullPageDown\n\nmapkey d g\nmapkey D G\nmapkey . n\nmapkey , N\nmapkey l u\nmapkey L U\n\nmapkey k i\nmapkey K I\nmapkey N J\nmapkey I K\nmapkey Q x",
+  "smoothScroll": false,
+  "searchUrl": "https://lite.duckduckgo.com/lite/?q=",
+  "settingsVersion": "2.1.2"
+}
