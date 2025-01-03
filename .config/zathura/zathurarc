@@ -1,4 +1,11 @@
 
+# Bookmarks store at `~/.local/share/zathura/bookmarks`
+# :blist 										# listbookmarks
+# :bmark (bookmark_name)		# save a bookmark
+# :bdelete (bookmark_name)	# delete a bookmark
+
+set font "mono 15"
+
 set sandbox none
 set statusbar-h-padding 0
 set statusbar-v-padding 0
