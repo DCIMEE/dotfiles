@@ -4,7 +4,6 @@ setxkbmap us -variant colemak
 setxkbmap -option caps:escape
 
 xset r rate 300 50 &
-dwmblocks &
 feh --bg-fill ~/Pictures/xxxx.jpg &
 xcompmgr &
 exec dwm
