@@ -4,4 +4,4 @@
 # pipewire-pulse &
 # wireplumber&
 
-dwmblocks &
+# dwmblocks &
