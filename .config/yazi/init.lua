@@ -1,7 +1,4 @@
 
-require("git"):setup()
-
-
 
 require("yaziline"):setup({
   color = "#98c379", -- main theme color
