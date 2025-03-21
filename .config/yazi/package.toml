@@ -1,12 +1,12 @@
 [[plugin.deps]]
-use = "llanosrocas/yaziline"
-rev = "864572c"
-hash = "2824dd15741717ccee82e232ccf894d7"
+use = "Ape/smart-enter"
+rev = "7b84c89"
+hash = "43eb1a1f2291795fb5b0b2ce1206ebee"
 
 [[plugin.deps]]
-use = "yazi-rs/plugins:smart-enter"
-rev = "71c4fc2"
-hash = "c1a2739e9ef2d837030ccb4267be3ed1"
+use = "h-hg/yamb"
+rev = "22af003"
+hash = "7cc42012a7c2099f80064d228feb8d44"
 
 [flavor]
 deps = []
