@@ -10,12 +10,13 @@
         "sway/workspaces",
         "sway/mode",
         "sway/scratchpad",
-        "custom/media",
+        //"custom/media",
         "sway/window"
-    ] //with a comma originally
-    //"modules-center": [
+    ],
+    "modules-center": [
         //"sway/window"
-    //],
+        "custom/media"
+    ],
     "modules-right": [
         //"mpd",
         //"idle_inhibitor",
