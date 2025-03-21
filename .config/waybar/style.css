@@ -59,7 +59,8 @@ button:hover {
 #workspaces button {
     padding: 0 0.4em;
     background-color: transparent;
-    color: #ffffff;
+    /* color: #ffffff; */
+		color: #e0e0e0;
 }
 
 #workspaces button:hover {
@@ -96,8 +97,10 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
+
+/* for modules on the top-right side */
 #mpd {
-    padding: 0 10px;
+    padding: 0 6px;
 		margin: 6px 3px;
     color: #333333;
 }
@@ -118,17 +121,21 @@ button:hover {
 }
 
 #clock {
-    background-color: #bbccdd;
+		color: #e0e0e0;
+    /* background-color: #bbccdd;*/ 
+		/* remove the background would just simply remove the bar */
 }
 
 #battery {
-    background-color: #bbccdd;
-    color: #333333;
+    /* background-color: #bbccdd; */
+    /* color: #333333; */
+		color: #e0e0e0;
 }
 
 #battery.charging, #battery.plugged {
-    color: #333333;
-    background-color: #bbccdd;
+    /* color: #333333;
+    background-color: #bbccdd; */
+		color: #e0e0e0;
 }
 
 @keyframes blink {
@@ -178,7 +185,8 @@ label:focus {
 }
 
 #memory {
-    background-color: #bbccdd;
+    /* background-color: #bbccdd; */
+		color: #e0e0e0;
 }
 
 #disk {
@@ -186,11 +194,13 @@ label:focus {
 }
 
 #backlight {
-    background-color: #bbccdd;
+    /* background-color: #bbccdd; */
+		color: #e0e0e0;
 }
 
 #network {
-    background-color: #bbccdd;
+    /* background-color: #bbccdd; */
+		color: #e0e0e0;
 }
 
 #network.disconnected {
@@ -198,8 +208,9 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #bbccdd;
-    color: #333333;
+    /* background-color: #bbccdd;
+    color: #333333; */
+		color: #e0e0e0;
 }
 
 #pulseaudio.muted {
@@ -239,7 +250,7 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    background-color: #bbccdd;
 }
 
 #tray > .passive {

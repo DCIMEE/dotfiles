@@ -6,10 +6,11 @@
 
 font pango: JetBrainsMono Nerd Font 13
 
-gaps inner 10
-gaps outer 5
+gaps inner 6
+gaps outer 2
 
-default_border pixel 2 # disable window titlebar
+# disable window titlebar
+default_border pixel 2
 
 ### Variables
 #
@@ -27,16 +28,12 @@ set $term foot
 # set $menu wmenu-run
 set $menu wofi --show drun
 
-exec pipewire
-exec pipewire-pulse
-exec wireplumber
-exec_always --no-startup-id fcitx5
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg $HOME/Downloads/Krz_TheLowerDepths.jpg fill
+output * bg $HOME/Images/Krz_TheLowerDepths.jpg fill
 #
 # Example configuration:
 #
@@ -46,11 +43,6 @@ output * bg $HOME/Downloads/Krz_TheLowerDepths.jpg fill
 
 ### Idle configuration
 #
-
-# exec swaymsg "workspace 6; exec pipewire;"
-# exec swaymsg "workspace 6; exec pipewire-pulse;"
-# exec swaymsg "workspace 6; exec wireplumber;"
-
 # Example configuration:
 #
 # exec swayidle -w \
@@ -239,6 +231,9 @@ bindsym $mod+d mode "resize"
     # Special key to take a screenshot with grim
     bindsym Print exec grim
 
+    bindsym --release Print exec grim ~/Images/ps_$(date +"%Y%m%d%H%M%S").png
+    bindsym $mod+Print exec grimshot save area ~/Images/psa_$(date +"%Y%m%d%H%M%S").png
+
 #
 # Status Bar:
 #
@@ -259,5 +254,28 @@ bar {
 
     swaybar_command waybar
 }
+
+# Floating behaviour
+
+for_window [app_id="mpv"] floating enable, opacity set 1
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="dialog"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_type="menu"] floating enable
+for_window [window_type="notification"] floating enable
+
+for_window [title="About LibreWolf"] floating enable
+for_window [window_role="About"] floating enable
+for_window [app_id="librewolf" title="Library"] floating enable, border none, sticky enable
+for_window [title="LibreWolf - Sharing Indicator"] kill
+
+
+exec pipewire
+exec pipewire-pulse
+exec wireplumber
+exec_always --no-startup-id fcitx5
+
 
 include /etc/sway/config.d/*
