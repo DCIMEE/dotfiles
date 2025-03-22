@@ -34,7 +34,7 @@ set $menu wofi --show drun
 ### Output configuration
 #
 
-# exec pipewire
+exec pipewire
 # exec pipewire-pulse
 # exec wireplumber
 exec fcitx5
