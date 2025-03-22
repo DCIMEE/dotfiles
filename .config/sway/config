@@ -34,9 +34,9 @@ set $menu wofi --show drun
 ### Output configuration
 #
 
-exec pipewire
-exec pipewire-pulse
-exec wireplumber
+# exec pipewire
+# exec pipewire-pulse
+# exec wireplumber
 exec fcitx5
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
