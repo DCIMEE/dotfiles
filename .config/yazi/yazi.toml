@@ -60,6 +60,9 @@ play = [
 document = [
 	{ run = 'zathura "$1"',		orphan = true,		desc = "Open", for = "linux" },
 ]
+image = [
+	{ run = 'nsxiv "$1"',		orphan = true,		desc = "Open", for = "linux" },
+]
 
 [open]
 rules = [
@@ -68,18 +71,21 @@ rules = [
 	# Text
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image
-	{ mime = "image/*", use = [ "open", "reveal" ] },
+	{ mime = "image/*", use = [ "image", "open", "reveal" ] },
 	# Media
 	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
 	# Archive
 	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract", "reveal" ] },
+	# Document
+	{ name = "*.pdf", use = [ "document" ] },
+	{ name = "*.epub", use = [ "document" ] },
 	# JSON
 	{ mime = "application/{json,ndjson}", use = [ "edit", "reveal" ] },
 	{ mime = "*/javascript", use = [ "edit", "reveal" ] },
 	# Empty file
 	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
 	# Fallback
-	{ name = "*", use = [ "document", "open", "reveal" ] },
+	{ name = "*", use = [ "open", "reveal" ] },
 ]
 
 [tasks]
