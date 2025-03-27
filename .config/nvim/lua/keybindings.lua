@@ -106,8 +106,8 @@ map('t', '<ESC>', '<C-\\><C-n><CR>')
 -- ## Netrw
 -- `:Ex` to call netrw explorer
 -- Toogle netrw with `Ctrl-t`
-map('i', '<C-t>', '<Esc>:Lexplore<CR>:vertical resize 30<CR>')
-map('n', '<C-t>', '<Esc>:Lexplore<CR>:vertical resize 30<CR>')
+-- map('i', '<C-t>', '<Esc>:Lexplore<CR>:vertical resize 30<CR>')
+-- map('n', '<C-t>', '<Esc>:Lexplore<CR>:vertical resize 30<CR>')
 -- Open file, but keep focus in Explorer
 -- vim.cmd('autocmd filetype netrw nmap <c-a> <cr>:wincmd W<cr>')
 
@@ -127,3 +127,7 @@ function! NetrwMapping()
 endfunction
 ]]
 
+
+-- oil.nvim
+map('n', '<C-t>', ':set nosplitright<CR>:vsplit<CR><Esc>:Oil<CR>:vertical resize 30<CR>')
+map('i', '<C-t>', '<ESC>:set nosplitright<CR>:vsplit<CR><Esc>:Oil<CR>:vertical resize 30<CR>')

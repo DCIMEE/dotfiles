@@ -73,6 +73,7 @@ vim.opt.smartcase = true
 
 
 -- Tabs
+vim.opt.expandtab = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 
@@ -84,3 +85,4 @@ vim.opt.updatetime = 100
 vim.opt.autoindent = true
 vim.opt.mouse = "a"
 vim.opt.shortmess = vim.opt.shortmess + 'c'
+
