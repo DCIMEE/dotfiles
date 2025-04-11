@@ -9,7 +9,7 @@ font pango: JetBrainsMono Nerd Font 13
 xwayland enable
 
 gaps inner 6
-gaps outer 2
+gaps outer 0
 
 # disable window titlebar
 default_border pixel 2

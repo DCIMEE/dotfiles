@@ -78,7 +78,7 @@ function y() {
 
 # Enviroment
 export EDITOR='nvim'
-
+alias e='emacs'
 
 # Load syntax highlighting; should be last.
 source $HOME/Downloads/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
