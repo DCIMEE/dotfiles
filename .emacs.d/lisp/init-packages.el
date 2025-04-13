@@ -1,16 +1,13 @@
 
 ;; -*- lexical-binding: t -*-
 
-;; Packages sources
-;; (require 'package)
-;; (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-;; (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
-
+;; Initialize package sources
 (require 'package)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("nongnu" . "https://elpa.nongnu.org/nongnu/")
                          ("melpa" . "https://melpa.org/packages/")
-                         ("melpa-stable" . "https://stable.melpa.org/packages/")))
+                         ("melpa-stable" . "https://stable.melpa.org/packages/")
+                         ("org" . "https://orgmode.org/elpa/")))
 (package-initialize)
 
 ;; optimization
@@ -34,7 +31,6 @@
 (ido-ubiquitous-mode 1)
 
 ;; Package 'company
-;; (package-install 'company)
 (use-package company)
 (global-company-mode 1)
 (setq company-minimum-prefix-length 1)
@@ -53,5 +49,14 @@
 (add-hook 'eshell-mode-hook (lambda ()
                               (define-key company-active-map (kbd "<return>") 'eshell-send-input)))
 
-;; end of file
+
+;; which-key
+(use-package which-key
+  :init (which-key-mode)
+  :diminish which-key-mode
+  :config
+  (setq which-key-idle-delay 0.15))
+
+
+;; end
 (provide 'init-packages)

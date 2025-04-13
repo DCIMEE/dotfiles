@@ -37,7 +37,6 @@
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 
 ;; save hisotry of entries entered in minibuffer prompts
-;; M-n & M-p to navigate when using minibuffer <M-x>
 (setq history-length 25)
 (savehist-mode 1)
 
@@ -75,5 +74,5 @@
 (global-set-key (kbd "C-,") 'rc/duplicate-line)
 
 
-;; end of file
+;; end
 (provide 'init-default)

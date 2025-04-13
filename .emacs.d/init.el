@@ -10,13 +10,9 @@
 
 (require 'init-org)
 
-(require 'init-evil)
+;; (require 'init-evil)
 
-;; Powershell for eshell in windows
-(when (eq system-type 'windows-nt)
-  (require 'powershell))
-
-
+
 ;; seperate customization file
 ;; auto add variables would be added to below files
 (setq custom-file (locate-user-emacs-file "custom-vars.el"))
