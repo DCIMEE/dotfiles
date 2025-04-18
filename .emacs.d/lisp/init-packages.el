@@ -14,48 +14,70 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-;; (package-install 'use-package)
-;; Setup `use-package'
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
 
 (require 'use-package-ensure)
 (setq use-package-always-ensure t)
+
+
 ;; ================================
 
-;; (package-install 'gruvbox-theme)
-(use-package gruvbox-theme)
 
-(use-package ido-completing-read+)
-(ido-ubiquitous-mode 1)
-
-;; Package 'company
-(use-package company)
-(global-company-mode 1)
-(setq company-minimum-prefix-length 1)
-(setq company-idle-delay 0)
-(define-key company-active-map (kbd "C-n") 'company-select-next)
-(define-key company-active-map (kbd "C-p") 'company-select-previous)
-;; (define-key company-mode-map (kbd "C-p") 'company-select-previous / nil)
-;; (define-key company-active-map (kbd "<TAB>") nil) ;; company-complete-common
-;; (define-key company-active-map (kbd "<return>") nil) ;; company-complete-selection
-(define-key company-active-map (kbd "C-y") #'company-complete-selection)
-(define-key company-active-map (kbd "<return>") 'electric-indent-just-newline)
-
-;; <RET> actions in eshell
-;; (add-hook 'eshell-mode-hook (lambda () (company-mode -1)))
-;; (remove-hook 'eshell-mode-hook (lambda () (company-mode -1)))
-(add-hook 'eshell-mode-hook (lambda ()
-                              (define-key company-active-map (kbd "<return>") 'eshell-send-input)))
+;; (use-package gruvbox-theme
+;;  :init (load-theme 'gruvbox-dark-hard t))
 
 
-;; which-key
+(use-package ido-completing-read+
+  :config (ido-ubiquitous-mode 1))
+
+
+(use-package corfu
+  :custom
+  (corfu-auto t)
+  (corfu-cycle t)
+  (corfu-quit-at-boundary 'separator)
+  (corfu-quit-no-match 'separator)
+  (corfu-preview-current nil)
+  (corfu-on-exact-match nil)
+  (corfu-auto-prefix 2)
+  (corfu-auto-delay 0)
+  :bind (:map corfu-map
+              ("C-n"      . corfu-next)
+              ("C-p"      . corfu-previous)
+              ("C-y"      . corfu-send)
+              ("M-SPC"    . corfu-insert-separator)
+              ("<escape>" . corfu-quit)
+              ("<return>" . electric-indent-just-newline))
+  :config
+  (add-hook 'eshell-mode-hook (lambda () (define-key corfu-map (kbd "<return>") 'eshell-send-input)))
+  (add-hook 'shell-mode-hook (lambda () (define-key corfu-map (kbd "<return>") 'eshell-send-input)))
+  :init (global-corfu-mode))
+
+
 (use-package which-key
-  :init (which-key-mode)
+  :defer 0
   :diminish which-key-mode
   :config
+  (which-key-mode)
   (setq which-key-idle-delay 0.15))
+
+
+(use-package dired
+  :commands (dired dired-jump)
+  :init
+  (setq delete-by-moving-to-trash t)
+  (put 'dired-find-alternate-file 'disabled nil) ; disables warning
+  :ensure nil
+  :commands (dired dired-jump)
+  :bind (("C-x C-j" . dired-jump))
+  :custom ((dired-listing-switches "-agho --group-directories-first"))
+  :config
+  ;; Make dired open in the same window when using RET or ^
+  (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file) ; was dired-advertised-find-file
+  (define-key dired-mode-map (kbd "^") (lambda () (interactive) (find-alternate-file "..")))  ; was dired-up-directory
+  (define-key dired-mode-map (kbd "[") (lambda () (interactive) (find-alternate-file ".."))))  ; was dired-up-directory
 
 
 ;; end

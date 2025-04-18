@@ -1,7 +1,7 @@
 -- options.lua
 
 -- ColorScheme
-vim.opt.background = 'dark'
+vim.opt.background = 'light'
 
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
@@ -73,7 +73,6 @@ vim.opt.smartcase = true
 
 
 -- Tabs
-vim.opt.expandtab = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 
@@ -85,4 +84,3 @@ vim.opt.updatetime = 100
 vim.opt.autoindent = true
 vim.opt.mouse = "a"
 vim.opt.shortmess = vim.opt.shortmess + 'c'
-

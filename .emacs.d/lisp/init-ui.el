@@ -1,34 +1,32 @@
 
 ;; disable welcome page
 (setq inhibit-startup-message t)
-;; (load-theme 'tango-dark t)
-;; (package-install 'gruvbox-theme)
-(load-theme 'gruvbox-dark-hard t)
-(add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font Mono-15"))
 
-;; (defun get-default-font ()
-;;   (cond
-;;    ((eq system-type 'windows-nt) "Consolas")
-;;    ((eq system-type 'gnu/linux) "JetBrainsMono Nerd Font Mone-18")))
+(load-theme 'modus-operandi-tinted t)
+(progn
+  ;;ModeLine Color
+  (set-face-background 'mode-line-active        "#d9d9d9")
+  (set-face-foreground 'mode-line-active        "#000000")
+  (set-face-background 'mode-line-inactive      "#e6e6e6")
+  (set-face-foreground 'mode-line-inactive      "#585858")
+  ;; Comment Face
+  (set-face-foreground 'font-lock-comment-face "#7c6f64"))
 
+(defun get-default-font ()
+  (cond
+   ((eq system-type 'windows-nt) "JetBrainsMono NFM-11")
+   ((eq system-type 'gnu/linux) "JetBrainsMono Nerd Font Mono-15")))
+
+(add-to-list 'default-frame-alist `(font . ,(get-default-font)))
+
+;; (set-face-attribute 'default nil :font (font-spec :family "JetBrainsMono NFM"  :size 18 :weight 'normal))
+;; (set-face-attribute 'variable-pitch nil :font (font-spec :family "Times New Roman" :size 24  :weight 'normal))
 
 ;; set seperate font for english and cjk
 (when (eq system-type 'windows-nt)
-(set-face-attribute 'default nil :font (font-spec :family "JetBrainsMono NFM" :size 18))
-(set-fontset-font t 'unicode (font-spec :family "Segoe UI Emoji"))
-(set-fontset-font t '(#x2ff0 . #x9ffc) (font-spec :family "LXGW Wenkai" :size 22 :weight 'regular)))
-
-;; Set the fixed pitch face
-(set-face-attribute 'fixed-pitch nil
-                    :font "JetBrainsMono Nerd Font Mono"
-                    :weight 'normal
-                    :height 120)
-
-;; Set the variable pitch face
-(set-face-attribute 'variable-pitch nil
-                    :font "DejaVu Serif"
-                    :height 110
-                    :weight 'normal)
+  (set-face-attribute 'default nil :font (font-spec :family "JetBrainsMono NFM" :size 18))
+  (set-fontset-font t 'unicode (font-spec :family "Segoe UI Emoji"))
+  (set-fontset-font t '(#x2ff0 . #x9ffc) (font-spec :family "LXGW Wenkai" :size 22 :weight 'regular)))
 
 
 ;; turn off UI elements
@@ -37,14 +35,19 @@
 (scroll-bar-mode -1)
 (setq use-dialog-box nil)
 
+;; date & time
+(setq display-time-format "[%a %d, %I:%M]")
+(display-time-mode 1)
+(setq display-time-default-load-average nil)
+(setq display-time-day-and-date t)
+
+;; 'face 'modeline-display-time
+
 ;; line numbers
 (column-number-mode)
 (global-display-line-numbers-mode 1)
 (setq display-line-numbers-type 'relative)
-;; coloriezd current line (Emacs v29?) 
-(set-face-attribute 'line-number-current-line nil 
-                    :foreground "#FF9E3B"
-                    :weight 'bold)
+
 
 ;; disable line numbers for some modes
 (dolist (mode '(;;org-mode-hook
