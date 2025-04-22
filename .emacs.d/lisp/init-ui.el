@@ -15,12 +15,12 @@
 (defun get-default-font ()
   (cond
    ((eq system-type 'windows-nt) "JetBrainsMono NFM-11")
-   ((eq system-type 'gnu/linux) "JetBrainsMono Nerd Font Mono-15")))
+   ((eq system-type 'gnu/linux) "JetBrainsMono Nerd Font Mono-13")))
 
 (add-to-list 'default-frame-alist `(font . ,(get-default-font)))
 
-;; (set-face-attribute 'default nil :font (font-spec :family "JetBrainsMono NFM"  :size 18 :weight 'normal))
-;; (set-face-attribute 'variable-pitch nil :font (font-spec :family "Times New Roman" :size 24  :weight 'normal))
+(set-face-attribute 'fixed-pitch nil :font "JetBrainsMono NFM" :height 120)
+(set-face-attribute 'variable-pitch nil :font "Noto Serif" :height 120 :weight 'regular)
 
 ;; set seperate font for english and cjk
 (when (eq system-type 'windows-nt)
@@ -36,16 +36,15 @@
 (setq use-dialog-box nil)
 
 ;; date & time
-(setq display-time-format "[%a %d, %I:%M]")
+(setq display-time-format "[%a %d, %H:%M]")
 (display-time-mode 1)
 (setq display-time-default-load-average nil)
 (setq display-time-day-and-date t)
 
-;; 'face 'modeline-display-time
 
 ;; line numbers
 (column-number-mode)
-(global-display-line-numbers-mode 1)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 
 

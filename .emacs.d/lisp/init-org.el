@@ -22,11 +22,17 @@
 (set-face-attribute 'org-meta-line nil :inherit '(font-lock-comment-face fixed-pitch))
 (set-face-attribute 'org-checkbox nil :inherit 'fixed-pitch)
 
+(defun org-mode-setup ()
+  (org-indent-mode)
+  (variable-pitch-mode 1)
+  (visual-line-mode 1))
 
 (use-package org
   :commands (org-capture org-agenda)
-  :init (setq org-hide-emphasis-markers t)
-  :config
+  :hook (org-mode . org-mode-setup)
+  :init
+  (setq org-hide-emphasis-markers t)
+  (setq org-catch-invisible-edits 'show-and-error)
   ;; org agenda
   ;; C-c C-s schedule
   ;; C-c C-d deadline
