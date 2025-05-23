@@ -12,7 +12,7 @@ EnumerateSkipFirst=False
 0=Shift+Shift_R
 
 [Hotkey/EnumerateForwardKeys]
-0=KP_Next
+0=Control+Control_R
 
 [Hotkey/EnumerateGroupForwardKeys]
 0=Super+space

@@ -1,0 +1,216 @@
+﻿# For documentation, see https://www.sumatrapdfreader.org/settings/settings3-6.html
+
+CheckForUpdates = true
+CustomScreenDPI = 0
+DefaultDisplayMode = automatic
+DefaultZoom = fit page
+EnableTeXEnhancements = true
+EscToExit = false
+FullPathInTitle = false
+InverseSearchCmdLine = notepad %f
+LazyLoading = true
+MainWindowBackground = #80fff200
+NoHomeTab = false
+ReloadModifiedDocuments = true
+RememberOpenedFiles = true
+RememberStatePerDocument = true
+RestoreSession = true
+ReuseInstance = false
+ShowMenubar = true
+ShowToolbar = true
+ShowFavorites = false
+ShowToc = true
+ShowLinks = false
+ShowStartPage = true
+SidebarDx = 309
+SmoothScroll = false
+TabWidth = 300
+Theme = Light
+TocDy = 573
+ToolbarSize = 18
+TreeFontName = automatic
+TreeFontSize = 0
+UIFontSize = 0
+UseSysColors = false
+UseTabs = true
+ZoomLevels = 8.33 12.5 18 25 33.33 50 66.67 75 100 125 150 200 300 400 600 800 1000 1200 1600 2000 2400 3200 4800 6400
+ZoomIncrement = 0
+
+FixedPageUI [
+	TextColor = #000000
+	BackgroundColor = #ffffff
+	SelectionColor = #f5fc0c
+	WindowMargin = 2 4 2 4
+	PageSpacing = 4 4
+	InvertColors = false
+	HideScrollbars = false
+]
+
+ComicBookUI [
+	WindowMargin = 0 0 0 0
+	PageSpacing = 4 4
+	CbxMangaMode = false
+]
+
+ChmUI [
+	UseFixedPageUI = false
+]
+
+Annotations [
+	HighlightColor = #ffff00
+	UnderlineColor = #00ff00
+	SquigglyColor = #ff00ff
+	StrikeOutColor = #ff0000
+	FreeTextColor = 
+	FreeTextSize = 12
+	FreeTextBorderWidth = 1
+	TextIconColor = #ffff00
+	TextIconType = 
+	DefaultAuthor = 
+]
+
+ExternalViewers [
+]
+
+ForwardSearch [
+	HighlightOffset = 0
+	HighlightWidth = 15
+	HighlightColor = #6581ff
+	HighlightPermanent = false
+]
+
+PrinterDefaults [
+	PrintScale = shrink
+]
+
+SelectionHandlers [
+]
+
+Shortcuts [
+	[
+		Cmd = CmdScrollDown 4
+		Key = e
+	]
+	[
+		Cmd = CmdScrollDown 24
+		Key = E
+	]
+	[
+		Cmd = CmdScrollUp n: 4
+		Key = u
+	]
+	[
+		Cmd = CmdScrollUp n: 24
+		Key = U
+	]
+	[
+		Cmd = CmdGoToNextPage
+		Key = i
+	]
+	[
+		Cmd = CmdGoToPrevPage
+		Key = n
+	]
+	[
+		Cmd = CmdGoToFirstPage
+		Key = Ctrl + g
+	]
+	[
+		Cmd = CmdGoToLastPage
+		Key = G
+	]
+	[
+		Cmd = CmdNextTab
+		Key = I
+	]
+	[
+		Cmd = CmdPrevTab
+		Key = N
+	]
+	[
+		Cmd = CmdCloseCurrentDocument
+		Key = Q
+	]
+	[
+		Cmd = CmdFindNext
+		Key = .
+	]
+	[
+		Cmd = CmdFindPrev
+		Key = ,
+	]
+	[
+		Cmd = CmdToggleFullscreen
+		Key = f
+	]
+	[
+		Cmd = CmdInvertColors
+		Key = '
+	]
+	[
+		Cmd = CmdRotateRight
+		Key = l
+	]
+	[
+		Cmd = CmdToggleZoom
+		Key = z
+	]
+	[
+		Cmd = CmdZoomIn
+		Key = +
+	]
+	[
+		Cmd = CmdZoomOut
+		Key = _
+	]
+	[
+		Cmd = CmdPresentationBlackBackground
+		Key = Return
+	]
+	[
+		Cmd = CmdFavoriteAdd
+		Key = b
+	]
+	[
+		Cmd = CmdFavoriteDel
+		Key = del
+	]
+	[
+		Cmd = CmdToggleTableOfContents
+		Key = t
+	]
+	[
+		Cmd = CmdFavoriteToggle
+		Key = T
+	]
+	[
+		Cmd = CmdClearHistory
+		Key = Ctrl + Shift + Delete
+	]
+	[
+		Cmd = CmdCommandPalette
+		Key = Ctrl + Return
+	]
+]
+
+Themes [
+]
+
+# You're not expected to change those manually
+UiLanguage = en
+WindowState = 2
+WindowPos = -8 0 976 548
+FileStates [
+	]
+TimeOfLastUpdateCheck = 31169180 1310990808
+OpenCountWeek = 742
+
+# Settings below are not recognized by the current version
+EbookUI [
+	FontName = LXGW Wenkai
+	FontSize = 12
+	TextColor = #5f4b32
+	BackgroundColor = #fbf0d9
+	UseFixedPageUI = true
+]
+TreeFontWeightOffset = 0

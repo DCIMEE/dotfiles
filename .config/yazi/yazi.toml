@@ -61,7 +61,7 @@ document = [
 	{ run = 'zathura "$1"',		orphan = true,		desc = "Open", for = "linux" },
 ]
 image = [
-	{ run = 'nsxiv "$1"',		orphan = true,		desc = "Open", for = "linux" },
+	{ run = 'fim "$1"',		orphan = true,		desc = "Open", for = "linux" },
 ]
 
 [open]

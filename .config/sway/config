@@ -42,13 +42,27 @@ exec caps2esc
 
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg $HOME/Images/Krz_TheLowerDepths.jpg fill
+output * bg $HOME/Images/Wallpaper.jpg fill
 #
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
+
+
+### Blur screen when lock
+
+set $lock $HOME/scripts/blurscript.sh
+bindsym $mod+Shift+z exec $lock
+
+### idle behaviour (swayidle)
+# inhibit_idle fullscreen
+exec_always swayidle -w \
+    timeout 180 '$lock' \
+    timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+    before-sleep '$lock'
+
 
 ### Idle configuration
 #
