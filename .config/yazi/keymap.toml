@@ -1,8 +1,9 @@
+
 # A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
 # If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
-[manager]
+[mgr]
 prepend_keymap = [
 	{ on = "i", run = 'plugin smart-enter' },
 	{ on = "<Enter>", run = 'plugin smart-enter' },
@@ -161,7 +162,9 @@ keymap = [
 	{ on = ["g", "f", "f"], run = "cd ~/.config" },
 	{ on = ["g", "f", "n"], run = "cd ~/.config/nvim" },
 	{ on = ["g", "f", "y"], run = "cd ~/.config/yazi" },
+	{ on = ["g", "f", "z"], run = "cd ~/.config/zsh" },
 	{ on = ["g", "f", "l"], run = "cd ~/.config/jesseduffield/lazygit" },
+	{ on = ["g", "F"], run = "cd ~/.sconfig" },
 	{ on = ["g", "<Space>"], run = "cd --interactive", desc = "Go to a directory interactively" },
 
 	# Tabs

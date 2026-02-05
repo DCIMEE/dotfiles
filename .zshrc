@@ -1,7 +1,9 @@
 
+
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+PS1="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M%{$fg[red]%}:%{$fg[magenta]%}%~%{$reset_color%}$%b "
 setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
@@ -21,6 +23,13 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
+
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'n' vi-backward-char
+bindkey -M menuselect 'u' vi-up-line-or-history
+bindkey -M menuselect 'i' vi-forward-char
+bindkey -M menuselect 'e' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
 
 
 # vi-mode
@@ -63,6 +72,8 @@ precmd_functions+=(_fix_cursor)
 
 KEYTIMEOUT=1
 
+# vi-mode_END
+
 
 # Move to cwd when exit yazi
 # use 'y' to run yazi instead
@@ -80,5 +91,8 @@ function y() {
 export EDITOR='nvim'
 alias e='emacs'
 
+#zsh-autosuggestions
+source $HOME/Downloads/zsh_scripts/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # Load syntax highlighting; should be last.
-source $HOME/Downloads/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/Downloads/zsh_scripts/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
